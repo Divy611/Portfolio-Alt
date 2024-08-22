@@ -32,7 +32,7 @@ const About = () => {
         I constantly look forward to new opportunities to apply my skills and acquire new ones. I look forward to meeting new people, and learn something new everyday.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 flex flex-wrap gap-10 flex">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

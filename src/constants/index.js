@@ -1,4 +1,4 @@
-import { frontend, backend, ux, prototyping, javascript, typescript, html, css, reactjs, redux, tailwind, nodejs, git, figma, docker, postgresql, rubyrails, graphql, komikult, leaderboard, math, movie, nyeusi, space, coverhunt, dcc, kelhel, microverse } from '../assets';
+import { frontend, backend, ux, prototyping, javascript, typescript, html, css, reactjs, redux, tailwind, nodejs, git, figma, docker, postgresql, rubyrails, graphql, komikult, leaderboard, math, movie, nyeusi, GrantThornton, VisoPay, Polibuzz, Knotters, Pillar } from '../assets';
 
 export const navLinks = [
   {
@@ -8,6 +8,10 @@ export const navLinks = [
   {
     id: 'projects',
     title: 'Projects',
+  },
+  {
+    id: 'experience',
+    title: 'experience',
   },
   {
     id: 'contact',
@@ -95,32 +99,39 @@ const technologies = [
 
 const experiences = [
   {
+    title: 'Co-Founder, CTO',
+    company_name: 'Polibuzz',
+    imageURL: Polibuzz,
+    iconBg: '#333333',
+    date: 'Febuary 2023 - Present',
+  },
+  {
+    title: 'Back End Developer Intern',
+    company_name: 'Knotters',
+    imageURL: Knotters,
+    iconBg: '#333333',
+    date: 'March 2023 - April 2023',
+  },
+  {
+    title: 'Data Analyst Intern',
+    company_name: '3Pillar Global',
+    imageURL: Pillar,
+    iconBg: '#333333',
+    date: 'June 2023 - July 2023',
+  },
+  {
+    title: 'Co-Founder, CTO',
+    company_name: 'VisoPay',
+    imageURL: VisoPay,
+    iconBg: '#333333',
+    date: 'Febuary 2024 - Present',
+  },
+  {
     title: 'Front-End Developer',
-    company_name: 'Cover Hunt',
-    icon: coverhunt,
+    company_name: 'Grant Thornton',
+    imageURL: GrantThornton,
     iconBg: '#333333',
-    date: 'Aug 2021 - Feb 2022',
-  },
-  {
-    title: 'Mentor (Volunteer)',
-    company_name: 'Microverse',
-    icon: microverse,
-    iconBg: '#333333',
-    date: 'Mar 2022 - May 2022',
-  },
-  {
-    title: 'Junior Software Engineer',
-    company_name: 'Kelhel',
-    icon: kelhel,
-    iconBg: '#333333',
-    date: 'May 2022 - Oct 2022',
-  },
-  {
-    title: 'Full Stack Developer',
-    company_name: 'Diversity Cyber Council',
-    icon: dcc,
-    iconBg: '#333333',
-    date: 'Sep 2022 - Present',
+    date: 'June 2024 - Present',
   },
 ];
 
@@ -144,8 +155,8 @@ const projects = [
       },
     ],
     image: komikult,
-    repo: 'https://github.com/shaqdeff/KomiKult',
-    demo: 'https://shaqdeff.github.io/KomiKult/',
+    repo: 'https://github.com/',
+    demo: 'https://main.d31bvgu2v6xl02.amplifyapp.com/',
   },
   {
     id: 'project-2',
@@ -167,8 +178,8 @@ const projects = [
       },
     ],
     image: leaderboard,
-    repo: 'https://github.com/shaqdeff/Leaderboard',
-    demo: 'https://shaqdeff.github.io/Leaderboard/',
+    repo: 'https://github.com/',
+    demo: 'https://',
   },
   {
     id: 'project-3',
@@ -189,8 +200,8 @@ const projects = [
       },
     ],
     image: math,
-    repo: 'https://github.com/shaqdeff/Math-Magicians',
-    demo: 'https://inspiring-medovik-37d3b3.netlify.app/',
+    repo: 'https://github.com/',
+    demo: '',
   },
   {
     id: 'project-4',
@@ -211,8 +222,8 @@ const projects = [
       },
     ],
     image: movie,
-    repo: 'https://github.com/shaqdeff/Movie-Metro',
-    demo: 'https://movie-metro.netlify.app/',
+    repo: 'https://github.com',
+    demo: '',
   },
   {
     id: 'project-5',
@@ -234,8 +245,8 @@ const projects = [
       },
     ],
     image: nyeusi,
-    repo: 'https://github.com/shaqdeff/Nyeusi-Fest-Site',
-    demo: 'https://shaqdeff.github.io/Nyeusi-Fest-Site/',
+    repo: 'https://github.com/',
+    demo: '',
   },
 ];
 

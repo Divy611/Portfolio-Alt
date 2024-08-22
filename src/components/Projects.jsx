@@ -6,17 +6,7 @@ import { github, pineapple, pineappleHover } from '../assets';
 import { projects } from '../constants';
 import { fadeIn, textVariant, staggerContainer } from '../utils/motion';
 
-const ProjectCard = ({
-  id,
-  name,
-  description,
-  image,
-  repo,
-  demo,
-  index,
-  active,
-  handleClick,
-}) => {
+const ProjectCard = ({ id, name, description, image, repo, demo, index, active, handleClick }) => {
   return (
     <motion.div
       variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
@@ -27,22 +17,14 @@ const ProjectCard = ({
       <div
         className="absolute top-0 left-0 z-10 bg-jetLight 
       h-full w-full opacity-[0.5] rounded-[24px]"></div>
-
-      <img
-        src={image}
-        alt={name}
-        className="absolute w-full h-full object-cover rounded-[24px]"
-      />
+      <img src={image} alt={name} className="absolute w-full h-full object-cover rounded-[24px]" />
 
       {active !== id ? (
         <div className="flex items-center justify-start pr-[4.5rem]">
-          <h3
-            className="font-extrabold font-beckman uppercase w-[200px] h-[30px] 
+          <h3 className="font-extrabold font-beckman uppercase w-[200px] h-[30px] 
         whitespace-nowrap sm:text-[27px] text-[18px] text-timberWolf tracking-[1px]
         absolute z-0 lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
-        leading-none z-20">
-            {name}
-          </h3>
+        leading-none z-20">{name}</h3>
         </div>
       ) : (
         <>
@@ -55,11 +37,7 @@ const ProjectCard = ({
                 className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full 
                   flex justify-center items-center cursor-pointer
                   sm:opacity-[0.9] opacity-[0.8]">
-                <img
-                  src={github}
-                  alt="source code"
-                  className="w-4/5 h-4/5 object-contain"
-                />
+                <img src={github} alt="source code" className="w-4/5 h-4/5 object-contain" />
               </div>
             </div>
 
