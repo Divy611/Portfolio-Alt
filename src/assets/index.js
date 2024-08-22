@@ -37,7 +37,7 @@ import postgresql from './tech/postgresql.png';
 import rubyrails from './tech/rubyrails.png';
 
 import Pillar from './company/Pillar.jpg';
-import VisoPay from './company/VisoPay.jpg';
+import VisoPay from './company/Visopay.jpg';
 import Knotters from './company/Knotters.png';
 import Polibuzz from './company/Polibuzz.png';
 import GrantThornton from './company/GrantThornton.jpeg';
@@ -49,51 +49,4 @@ import movie from './projects/movie-metro.png';
 import nyeusi from './projects/nyeusi.png';
 import space from './projects/space-hub.png';
 
-export {
-  bwmap,
-  nairobi,
-  whiteabstract,
-  worldmap,
-  logo,
-  logotext,
-  divy,
-  backend,
-  ux,
-  frontend,
-  prototyping,
-  github,
-  close,
-  download,
-  downloadHover,
-  pineapple,
-  pineappleHover,
-  menu,
-  resume,
-  send,
-  sendHover,
-  css,
-  docker,
-  figma,
-  git,
-  graphql,
-  html,
-  javascript,
-  nodejs,
-  postgresql,
-  rubyrails,
-  reactjs,
-  redux,
-  tailwind,
-  typescript,
-  komikult,
-  leaderboard,
-  math,
-  movie,
-  nyeusi,
-  space,
-  VisoPay,
-  Knotters,
-  Polibuzz,
-  GrantThornton,
-  Pillar,
-};
+export { bwmap, nairobi, whiteabstract, worldmap, logo, logotext, divy, backend, ux, frontend, prototyping, github, close, download, downloadHover, pineapple, pineappleHover, menu, resume, send, sendHover, css, docker, figma, git, graphql, html, javascript, nodejs, postgresql, rubyrails, reactjs, redux, tailwind, typescript, komikult, leaderboard, math, movie, nyeusi, space, VisoPay, Knotters, Polibuzz, GrantThornton, Pillar };
