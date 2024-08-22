@@ -36,11 +36,11 @@ import graphql from './tech/graphql.png';
 import postgresql from './tech/postgresql.png';
 import rubyrails from './tech/rubyrails.png';
 
-import GrantThornton from './company/GrantThornton.jpeg';
+import Pillar from './company/Pillar.jpg';
+import VisoPay from './company/VisoPay.jpg';
 import Knotters from './company/Knotters.png';
 import Polibuzz from './company/Polibuzz.png';
-import Pillar from './company/Pillar.jpg';
-import VisoPay from './company/VisoPay.jpeg';
+import GrantThornton from './company/GrantThornton.jpeg';
 
 import komikult from './projects/komikult.png';
 import leaderboard from './projects/leaderboard.png';
