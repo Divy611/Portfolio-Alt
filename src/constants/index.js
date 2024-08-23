@@ -1,4 +1,19 @@
-import { frontend, backend, ux, prototyping, javascript, typescript, html, css, reactjs, redux, tailwind, nodejs, git, figma, docker, postgresql, rubyrails, graphql, komikult, leaderboard, math, movie, nyeusi, GrantThornton, VisoPay, Polibuzz, Knotters, Pillar } from '../assets';
+import css from '../assets/tech/css.png';
+import git from '../assets/tech/git.png';
+import aws from '../assets/tech/aws.png';
+import java from '../assets/tech/java.png';
+import html from '../assets/tech/html.png';
+import dart from '../assets/tech/dart.png';
+import django from '../assets/tech/django.png';
+import python from '../assets/tech/python.png';
+import flutter from '../assets/tech/flutter.png';
+import reactjs from '../assets/tech/reactjs.png';
+import mongodb from '../assets/tech/mongodb.png';
+import angular from '../assets/tech/angular.png';
+import tailwind from '../assets/tech/tailwind.png';
+import firebase from '../assets/tech/firebase.png';
+import javascript from '../assets/tech/javascript.png';
+import { frontend, backend, ux, prototyping, komikult, leaderboard, math, movie, nyeusi, GrantThornton, VisoPay, Polibuzz, Knotters, Pillar } from '../assets';
 
 export const navLinks = [
   {
@@ -41,60 +56,68 @@ const services = [
 const technologies = [
   {
     name: 'HTML 5',
-    icon: html,
+    imageUrl: html,
   },
   {
     name: 'CSS 3',
-    icon: css,
+    imageUrl: css,
   },
   {
     name: 'JavaScript',
-    icon: javascript,
+    imageUrl: javascript,
   },
   {
-    name: 'TypeScript',
-    icon: typescript,
+    name: 'Python',
+    imageUrl: python,
   },
   {
-    name: 'React JS',
-    icon: reactjs,
+    name: 'Dart',
+    imageUrl: dart,
   },
   {
-    name: 'Redux Toolkit',
-    icon: redux,
+    name: 'Java',
+    imageUrl: java,
   },
   {
     name: 'Tailwind CSS',
-    icon: tailwind,
+    imageUrl: tailwind,
   },
   {
-    name: 'Node JS',
-    icon: nodejs,
+    name: 'Angular JS',
+    imageUrl: angular,
   },
   {
-    name: 'Rails',
-    icon: rubyrails,
+    name: 'React JS',
+    imageUrl: reactjs,
   },
   {
-    name: 'graphql',
-    icon: graphql,
+    name: 'Django',
+    imageUrl: django,
   },
   {
-    name: 'postgresql',
-    icon: postgresql,
+    name: 'Flutter',
+    imageUrl: flutter,
   },
   {
-    name: 'git',
-    icon: git,
+    name: 'Firebase',
+    imageUrl: firebase,
   },
   {
-    name: 'figma',
-    icon: figma,
+    name: 'AWS',
+    imageUrl: aws,
   },
   {
-    name: 'docker',
-    icon: docker,
+    name: 'MongoDB',
+    imageUrl: mongodb,
   },
+  {
+    name: 'Git',
+    imageUrl: git,
+  },
+  // {
+  //   name: 'Figma',
+  //   imageUrl: figma,
+  // },
 ];
 
 const experiences = [

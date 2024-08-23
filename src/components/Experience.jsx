@@ -26,7 +26,7 @@ const ExperienceCard = ({ experience }) => (
         {experience.title}
       </h3>
       <p className="text-taupe text-[22px] font-semibold font-overcameBold tracking-[1px]" style={{ margin: 0 }}> {experience.company_name}</p>
-      <p className="text-xl">{experience.description}</p>
+      {/* <p className="text-xl">{experience.description}</p> */}
     </div>
   </VerticalTimelineElement>
 );
@@ -35,12 +35,8 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} sm:pl-16 pl-[2rem]`}>
-          What I've done so far
-        </p>
-        <h2 className={`${styles.sectionHeadText} sm:pl-16 pl-[2rem]`}>
-          Work Experience.
-        </h2>
+        <p className={`${styles.sectionSubText} sm:pl-16 pl-[2rem]`}>What I've done so far</p>
+        <h2 className={`${styles.sectionHeadText} sm:pl-16 pl-[2rem]`}>Work Experience.</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
