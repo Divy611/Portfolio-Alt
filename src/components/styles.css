@@ -1,0 +1,9 @@
+.vertical-timeline-element {
+    opacity: 0;
+    transition: opacity 0.5s ease, height 0.5s ease;
+}
+
+.vertical-timeline-element.open {
+    opacity: 1;
+    height: auto;
+}

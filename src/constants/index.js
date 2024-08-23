@@ -166,8 +166,8 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
-    name: 'KomiKult',
-    description: 'A comic characters list app that displays Marvel characters.',
+    name: 'Virtual Assistant',
+    description: 'A Python-based virtual assistant, similar to Google Assistant, Alexa, or Cortana. Designed to handle a variety of tasks through voice commands. ',
     tags: [
       {
         name: 'react',
@@ -183,14 +183,14 @@ const projects = [
       },
     ],
     image: komikult,
-    repo: 'https://github.com/',
-    demo: 'https://main.d31bvgu2v6xl02.amplifyapp.com/',
+    repo: 'https://github.com/Divy611/Virtual-Assistant',
+    demo: '',
   },
   {
     id: 'project-2',
-    name: 'Leaderboard',
+    name: 'Music Recommendation System',
     description:
-      'A leaderboard list app that displays scores submitted by different players.',
+      'This system uses various music metrics as input to suggest songs tailored to the given metric values. Additionally, the system is integrated with Spotify, allowing users to play the recommended songs directly from the user interface.',
     tags: [
       {
         name: 'react',
@@ -206,8 +206,8 @@ const projects = [
       },
     ],
     image: leaderboard,
-    repo: 'https://github.com/',
-    demo: 'https://',
+    repo: 'https://github.com/Divy611/Music-Recommendation-System',
+    demo: '',
   },
   {
     id: 'project-3',
@@ -229,7 +229,7 @@ const projects = [
     ],
     image: math,
     repo: 'https://github.com/',
-    demo: '',
+    demo: 'https://github.com/Divy611/Swift-Shop',
   },
   {
     id: 'project-4',
@@ -250,32 +250,32 @@ const projects = [
       },
     ],
     image: movie,
-    repo: 'https://github.com',
+    repo: 'https://github.com/Divy611/Face-Detection-and-Recognition',
     demo: '',
   },
-  {
-    id: 'project-5',
-    name: 'Nyeusi Fest Site',
-    description:
-      'This is a demo concert website for a music festival called Nyeusi.',
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'supabase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: nyeusi,
-    repo: 'https://github.com/',
-    demo: '',
-  },
+  // {
+  //   id: 'project-5',
+  //   name: 'Nyeusi Fest Site',
+  //   description:
+  //     'This is a demo concert website for a music festival called Nyeusi.',
+  //   tags: [
+  //     {
+  //       name: 'nextjs',
+  //       color: 'blue-text-gradient',
+  //     },
+  //     {
+  //       name: 'supabase',
+  //       color: 'green-text-gradient',
+  //     },
+  //     {
+  //       name: 'css',
+  //       color: 'pink-text-gradient',
+  //     },
+  //   ],
+  //   image: nyeusi,
+  //   repo: '',
+  //   demo: '',
+  // },
 ];
 
 export { services, technologies, experiences, projects };

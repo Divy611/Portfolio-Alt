@@ -17,7 +17,6 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setForm({ ...form, [name]: value });
   };
 
@@ -30,9 +29,9 @@ const Contact = () => {
         'template_02np6ua',
         {
           from_name: form.name,
-          to_name: 'YourName', // put your name here.
+          to_name: 'Divy',
           from_email: form.email,
-          to_email: 'youremail@gmail.com', //put your email here.
+          to_email: 'divy.parikh@hotmail.com',
           message: form.message,
         },
         'eZjZAcUFmv1oum3v0'
@@ -108,7 +107,7 @@ const Contact = () => {
             {loading ? 'Sending' : 'Send'}
             <img
               src={send}
-              alt="send"
+              alt=""
               className="contact-btn sm:w-[26px] sm:h-[26px] 
               w-[23px] h-[23px] object-contain"
             />
