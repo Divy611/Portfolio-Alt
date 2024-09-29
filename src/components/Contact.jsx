@@ -2,55 +2,66 @@ import { styles } from '../styles';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { SectionWrapper } from '../hoc';
-import { useState, useRef } from 'react';
 import { slideIn } from '../utils/motion';
 import { send, sendHover } from '../assets';
+import { useState, useRef, useEffect } from 'react';
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: '',
-    email: '',
+    user_email: '',
     message: '',
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setForm({ ...form, [name]: value });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    emailjs
-      .send(
-        'service_7wnt82i',
-        'template_02np6ua',
-        {
-          from_name: form.name,
-          to_name: 'Divy',
-          from_email: form.email,
-          to_email: 'divy.parikh@hotmail.com',
-          message: form.message,
-        },
-        'eZjZAcUFmv1oum3v0'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert('Thank you. I will get back to you as soon as possible.');
-          setForm({
-            name: '',
-            email: '',
-            message: '',
-          });
-        },
-        (error) => {
-          setLoading(false);
-          alert('Something went wrong. Please try again.');
-        }
-      );
+    emailjs.sendForm('service_7wnt82i', 'template_02np6ua', formRef.current, { publicKey: 'JctaAMtidcUuTbxT8' })
+      .then(() => {
+        setLoading(false);
+        alert('Thank you. I will get back to you as soon as possible.');
+        setForm({ name: '', user_email: '', message: '' });
+        setIsSubmitted(true);
+      }, (error) => {
+        setLoading(false);
+        alert('Something went wrong. Please try again.');
+        console.log(error.text);
+      });
+    // emailjs
+    //   .send(
+    //     'service_7wnt82i',
+    //     'template_02np6ua',
+    //     {
+    //       from_name: form.name,
+    //       to_name: 'Divy',
+    //       from_email: form.email,
+    //       to_email: 'divy.parikh@hotmail.com',
+    //       message: form.message,
+    //     },
+    //     'eZjZAcUFmv1oum3v0'
+    //   )
+    //   .then(
+    //     () => {
+    //       setLoading(false);
+    //       alert('Thank you. I will get back to you as soon as possible.');
+    //       setForm({
+    //         name: '',
+    //         email: '',
+    //         message: '',
+    //       });
+    //     },
+    //     (error) => {
+    //       setLoading(false);
+    //       alert('Something went wrong. Please try again.');
+    //     }
+    //   );
   };
 
   return (
@@ -63,11 +74,11 @@ const Contact = () => {
         <form ref={formRef} onSubmit={handleSubmit} className="mt-10 flex flex-col gap-6 font-poppins">
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">Your Name</span>
-            <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="What's your name?" className="bg-eerieBlack py-4 px-6 placeholder:text-taupe text-timberWolf rounded-lg outline-none border-none font-medium" />
+            <input type="text" name="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Name" className="bg-eerieBlack py-4 px-6 placeholder:text-taupe text-timberWolf rounded-lg outline-none border-none font-medium" />
           </label>
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">Your Email</span>
-            <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="What's your email?" className="bg-eerieBlack py-4 px-6 placeholder:text-taupe text-timberWolf rounded-lg outline-none border-none font-medium" />
+            <input type="email" name="email" value={form.user_email} onChange={(e) => setForm({ ...form, user_email: e.target.value })} placeholder="Email" className="bg-eerieBlack py-4 px-6 placeholder:text-taupe text-timberWolf rounded-lg outline-none border-none font-medium" />
           </label>
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">
@@ -77,8 +88,8 @@ const Contact = () => {
               rows="7"
               name="message"
               value={form.message}
-              onChange={handleChange}
-              placeholder="What's your message?"
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              placeholder="Your message here..."
               className="bg-eerieBlack py-4 px-6
               placeholder:text-taupe
               text-timberWolf rounded-lg outline-none

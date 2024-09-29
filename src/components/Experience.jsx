@@ -1,35 +1,40 @@
-import { styles } from '../styles';
-import { motion } from 'framer-motion';
-import { SectionWrapper } from '../hoc';
-import { experiences } from '../constants';
-import { textVariant } from '../utils/motion';
-import 'react-vertical-timeline-component/style.min.css';
-import { download, downloadHover, resume } from '../assets';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { useState } from 'react'
+import { styles } from '../styles'
+import { motion } from 'framer-motion'
+import { SectionWrapper } from '../hoc'
+import { experiences } from '../constants'
+import { textVariant } from '../utils/motion'
+import 'react-vertical-timeline-component/style.min.css'
+import { download, downloadHover, resume } from '../assets'
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 
-const ExperienceCard = ({ experience }) => (
-  <VerticalTimelineElement contentStyle={{ background: '#eaeaec', color: '#292929', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px', }}
-    contentArrowStyle={{ borderRight: '7px solid  #232631', }}
-    date={
-      <div>
-        <h3 className="text-dim text-[18px] font-bold font-beckman">{experience.date}</h3>
-      </div>
-    }
-    iconStyle={{ background: experience.iconBg }}
-    icon={
-      <div className="flex justify-center items-center w-full h-full">
-        <img src={experience.imageURL} alt="" className="w-full h-full rounded-full" style={{ backgroundSize: "cover" }} />
-      </div>
-    }>
-    <div>
-      <h3 className="text-jetLight text-[24px] font-bold font-beckman tracking-[2px]">
-        {experience.title}
-      </h3>
-      <p className="text-taupe text-[22px] font-semibold font-overcameBold tracking-[1px]" style={{ margin: 0 }}> {experience.company_name}</p>
-      {/* <p className="text-xl">{experience.description}</p> */}
-    </div>
-  </VerticalTimelineElement>
-);
+const ExperienceCard = ({ experience }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const handleClick = () => { }
+  return (
+    <VerticalTimelineElement contentStyle={{ background: '#eaeaec', color: '#292929', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px', }}
+      contentArrowStyle={{ borderRight: '7px solid  #232631', }}
+      date={
+        <div>
+          <h3 className="text-dim text-[18px] font-bold font-beckman">{experience.date}</h3>
+        </div>
+      }
+      iconStyle={{ background: experience.iconBg }}
+      icon={
+        <div className="flex justify-center items-center w-full h-full">
+          <img src={experience.imageURL} alt="" className="w-full h-full rounded-full" style={{ backgroundSize: "cover" }} />
+        </div>
+      }>
+      <button className='text-start' onClick={() => { setIsExpanded(!isExpanded) }}>
+        <h3 className="text-jetLight text-[24px] font-bold font-beckman tracking-[2px]">
+          {experience.title}
+        </h3>
+        <p className="text-taupe text-[22px] font-semibold font-overcameBold tracking-[1px]" style={{ margin: 0 }}> {experience.company_name}</p>
+        {isExpanded && <p className="text-xl">{experience.description}</p>}
+      </button>
+    </VerticalTimelineElement>
+  )
+}
 
 const Experience = () => {
   return (
@@ -46,9 +51,7 @@ const Experience = () => {
           ))}
           <VerticalTimelineElement
             contentStyle={{ background: '#eaeaec', color: '#292929', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px', display: 'flex', justifyContent: 'center', alignItems: 'center', }}
-            contentArrowStyle={{
-              borderRight: '7px solid  #232631',
-            }}
+            contentArrowStyle={{ borderRight: '7px solid  #232631', }}
             iconStyle={{ background: '#333333' }}
             icon={
               <div className="flex justify-center items-center w-full h-full">
@@ -65,7 +68,7 @@ const Experience = () => {
               hover:text-eerieBlack transition duration-[0.2s] 
               ease-in-out"
               onClick={() =>
-                window.open('https://divy_parikh.hackerresume.io/44a708dc-6f10-408a-b18c-0bad5407427c', '_blank')
+                window.open('https://1drv.ms/b/c/935637bd60465d00/EYs40ODeqTNEngeO6_thYbwBhXEVPRu2Mksmir1Ma8ACWg?e=xhXgP0', '_blank')
               }
               onMouseOver={() => {
                 document
