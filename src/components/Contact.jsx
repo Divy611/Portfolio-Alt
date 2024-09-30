@@ -14,54 +14,38 @@ const Contact = () => {
     message: '',
   });
   const [loading, setLoading] = useState(false);
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setForm({ ...form, [name]: value });
-  // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     emailjs.sendForm('service_7wnt82i', 'template_02np6ua', formRef.current, { publicKey: 'JctaAMtidcUuTbxT8' })
-      .then(() => {
-        setLoading(false);
-        alert('Thank you. I will get back to you as soon as possible.');
-        setForm({ name: '', user_email: '', message: '' });
-        setIsSubmitted(true);
-      }, (error) => {
-        setLoading(false);
-        alert('Something went wrong. Please try again.');
-        console.log(error.text);
-      });
-    // emailjs
-    //   .send(
-    //     'service_7wnt82i',
-    //     'template_02np6ua',
-    //     {
-    //       from_name: form.name,
-    //       to_name: 'Divy',
-    //       from_email: form.email,
-    //       to_email: 'divy.parikh@hotmail.com',
-    //       message: form.message,
-    //     },
-    //     'eZjZAcUFmv1oum3v0'
-    //   )
-    //   .then(
-    //     () => {
-    //       setLoading(false);
-    //       alert('Thank you. I will get back to you as soon as possible.');
-    //       setForm({
-    //         name: '',
-    //         email: '',
-    //         message: '',
-    //       });
-    //     },
-    //     (error) => {
-    //       setLoading(false);
-    //       alert('Something went wrong. Please try again.');
-    //     }
-    //   );
+      // .send(
+      //   'service_7wnt82i',
+      //   'template_02np6ua',
+      //   //formRef.current,
+      //   {
+      //     from_name: form.name,
+      //     to_name: 'Divy',
+      //     from_email: form.email,
+      //     to_email: 'divy.parikh@hotmail.com',
+      //     message: form.message,
+      //   },
+      //   { publicKey: 'JctaAMtidcUuTbxT8' }
+      // )
+      .then(
+        () => {
+          setLoading(false);
+          alert('Thank you. I will get back to you as soon as possible.');
+          setForm({
+            name: '',
+            user_email: '',
+            message: '',
+          });
+        },
+        (error) => {
+          setLoading(false);
+          alert('Something went wrong. Please try again.');
+        }
+      );
   };
 
   return (
@@ -78,12 +62,10 @@ const Contact = () => {
           </label>
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">Your Email</span>
-            <input type="email" name="email" value={form.user_email} onChange={(e) => setForm({ ...form, user_email: e.target.value })} placeholder="Email" className="bg-eerieBlack py-4 px-6 placeholder:text-taupe text-timberWolf rounded-lg outline-none border-none font-medium" />
+            <input type="email" name="user_email" value={form.user_email} onChange={(e) => setForm({ ...form, user_email: e.target.value })} placeholder="Email" className="bg-eerieBlack py-4 px-6 placeholder:text-taupe text-timberWolf rounded-lg outline-none border-none font-medium" />
           </label>
           <label className="flex flex-col">
-            <span className="text-timberWolf font-medium mb-4">
-              Your Message
-            </span>
+            <span className="text-timberWolf font-medium mb-4">Your Message</span>
             <textarea
               rows="7"
               name="message"
@@ -106,21 +88,10 @@ const Contact = () => {
             w-[100px] h-[45px] rounded-[10px] bg-night 
             hover:bg-battleGray hover:text-eerieBlack 
             transition duration-[0.2s] ease-in-out"
-            onMouseOver={() => {
-              document
-                .querySelector('.contact-btn')
-                .setAttribute('src', sendHover);
-            }}
-            onMouseOut={() => {
-              document.querySelector('.contact-btn').setAttribute('src', send);
-            }}>
-            {loading ? 'Sending' : 'Send'}
-            <img
-              src={send}
-              alt=""
-              className="contact-btn sm:w-[26px] sm:h-[26px] 
-              w-[23px] h-[23px] object-contain"
-            />
+            onMouseOver={() => { document.querySelector('.contact-btn').setAttribute('src', sendHover); }}
+            onMouseOut={() => { document.querySelector('.contact-btn').setAttribute('src', send); }}
+          >{loading ? 'Sending' : 'Send'}
+            <img src={send} alt="" className="contact-btn sm:w-[26px] sm:h-[26px]  w-[23px] h-[23px] object-contain" />
           </button>
         </form>
       </motion.div>

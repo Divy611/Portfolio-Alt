@@ -1,6 +1,6 @@
-import { styles } from '../styles';
-import { motion } from 'framer-motion';
-import { divy, bwmap, worldmap } from '../assets';
+import { styles } from '../styles'
+import { motion } from 'framer-motion'
+import { bwmap, worldmap } from '../assets'
 
 const Hero = () => {
   return (
@@ -18,23 +18,16 @@ const Hero = () => {
             <div className="w-1 sm:h-80 h-40 bw-gradient sm:hidden" />
           </div>
           <div>
-            <h1 className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase`}>
-              Hi, I'm{' '}
+            <h1 className={`${styles.heroHeadText} text-eerieBlack font-poppins uppercase`}>Hi, I'm{' '}
               <span className="sm:text-battleGray sm:text-[90px] text-eerieBlack text-[50px] font-mova font-extrabold uppercase">
                 Divy Parikh
               </span>
             </h1>
-            <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
-              A Full-Stack Developer
-              {/* Lorem ipsum dolor sit amet. <br className="sm:block hidden" />
-              consectetur adipisicing elit deleniti, voluptas. */}
-            </p>
+            <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>A Full-Stack Developer</p>
           </div>
           <div className="w-screen flex flex-col items-start  justify-center sm:-ml-[3rem] xxs:mt-4"></div>
-          <div>
-          </div>
+          <div></div>
         </div>
-
         <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
           <a href="#about">
             <div className="w-[35px] h-[64px] rounded-3xl border-4 border-french border-dim flex justify-center items-start p-2">
@@ -42,9 +35,7 @@ const Hero = () => {
             </div>
           </a>
         </div>
-        <div>
-          {/* <img className="absolute bottom-0 ml-[50vw] lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw] sm:h-[90vh] md:h-[70vh] xl:h-[80vh]" src={divy} alt="" /> */}
-        </div>
+        <div></div>
       </section>
     </>
   );

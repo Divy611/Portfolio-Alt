@@ -1,8 +1,8 @@
-import { styles } from '../styles';
-import { Link } from 'react-router-dom';
-import { navLinks } from '../constants';
-import React, { useState } from 'react';
-import { close, menu, logo, logotext } from '../assets';
+import { styles } from '../styles'
+import { Link } from 'react-router-dom'
+import { navLinks } from '../constants'
+import React, { useState } from 'react'
+import { close, menu } from '../assets'
 
 const Navbar = () => {
   const [active, setActive] = useState('');
@@ -12,9 +12,7 @@ const Navbar = () => {
     <nav className={`${styles.paddingX} w-full flex items-center py-2 fixed top-0 z-20 bg-flashWhite sm:opacity-[0.97] xxs:h-[12vh]`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto px-1 py-4">
         <Link to="/" className="flex items-center gap-2" onClick={() => { setActive(''); window.scrollTo(0, 0); }}>
-          {/* <img src={logo} alt="" className="sm:w-[50px] sm:h-[50px] w-[45px] h-[45px] object-contain" /> */}
           <h1 className="text-4xl font-bold text-black">Divy Parikh</h1>
-          {/* <img src={logotext} alt="" className="sm:w-[90px] sm:h-[90px] w-[85px] h-[85px] -ml-[0.6rem] object-contain" /> */}
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-14 mt-2">
           {navLinks.map((nav) => (
@@ -24,11 +22,8 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="sm:hidden flex flex-1 w-screen justify-end items-center">
-          {toggle ? (
-            <div
-              className={`p-6 bg-flashWhite opacity-[0.98] absolute 
-                top-0 left-0 w-screen h-[100vh] z-10 menu ${toggle ? 'menu-open' : 'menu-close'
-                }`}>
+          {toggle
+            ? (<div className={`p-6 bg-flashWhite opacity-[0.98] absolute top-0 left-0 w-screen h-[100vh] z-10 menu ${toggle ? 'menu-open' : 'menu-close'}`}>
               <div className="flex justify-end">
                 <img src={close} alt="close" className="w-[22px] h-[22px] object-contain cursor-pointer" onClick={() => setToggle(!toggle)} />
               </div>
@@ -39,10 +34,9 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-          ) : (
-            <img src={menu} alt="" className="w-[34px] h-[34px] object-contain cursor-pointer" onClick={() => setToggle(!toggle)} />
-          )}
+            </div>)
+            : (<img src={menu} alt="" className="w-[34px] h-[34px] object-contain cursor-pointer" onClick={() => setToggle(!toggle)} />)
+          }
         </div>
       </div>
     </nav>

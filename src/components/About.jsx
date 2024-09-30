@@ -1,18 +1,16 @@
-import React from 'react';
-import { styles } from '../styles';
-import { motion } from 'framer-motion';
-import { SectionWrapper } from '../hoc';
-import { services } from '../constants';
-import { fadeIn, textVariant } from '../utils/motion';
+import React from 'react'
+import { styles } from '../styles'
+import { motion } from 'framer-motion'
+import { SectionWrapper } from '../hoc'
+import { services } from '../constants'
+import { fadeIn, textVariant } from '../utils/motion'
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
-    <motion.div variants={fadeIn('right', 'spring', 0.5 * index, 0.75)} className="xs:w-[250px] w-full card-gradient p-[1px] rounded-[20px] shadow-card w-1/4">
-      <div options={{ max: 45, scale: 1, speed: 450 }} className="bg-jetLight rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
-        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-        <h3 className="text-taupe text-[18px] font-bold text-center">{title}</h3>
-      </div>
-    </motion.div>
+    <div key={index} options={{ max: 45, scale: 1, speed: 450 }} className="w-1/4 bg-jetLight rounded-2xl p-8 flex flex-col justify-center items-center">
+      <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+      <h3 className="py-3 text-white text-xl font-bold text-center">{title}</h3>
+    </div>
   );
 };
 
@@ -30,7 +28,7 @@ const About = () => {
         I constantly look forward to new opportunities to apply my skills and acquire new ones. I look forward to meeting new people, and learn something new everyday.
       </motion.p>
 
-      <div className="mt-20 flex flex-row gap-10">
+      <div className="p-2 mt-20 flex flex-row gap-10">
         {services.map((service, index) => (<ServiceCard key={service.title} index={index} {...service} />))}
       </div>
     </div>

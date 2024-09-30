@@ -1,9 +1,9 @@
-import { styles } from '../styles';
-import { BallCanvas } from './canvas';
-import { motion } from 'framer-motion';
-import { SectionWrapper } from '../hoc';
-import { technologies } from '../constants';
-import { textVariant } from '../utils/motion';
+import { styles } from '../styles'
+import { BallCanvas } from './canvas'
+import { motion } from 'framer-motion'
+import { SectionWrapper } from '../hoc'
+import { technologies } from '../constants'
+import { textVariant } from '../utils/motion'
 
 const Tech = () => {
   return (
@@ -16,7 +16,6 @@ const Tech = () => {
       <div className="flex flex-wrap justify-center gap-10 mt-14">
         {technologies.map((technology) => (
           <div className="w-28 h-28 items-center" key={technology.name}>
-            {/*<BallCanvas icon={technology.icon} />*/}
             <BallCanvas imageUrl={technology.imageUrl} />
           </div>
         ))}
