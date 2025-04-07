@@ -1,47 +1,19 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import React, { Suspense } from 'react';
-//import { Canvas } from '@react-three/fiber';
-//import { Decal, Float, OrbitControls, Preload, useTexture } from '@react-three/drei';
 
 export default function BallCanvas({ imageUrl, delay }) {
   return (
     <>
-      <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: delay }} className='bord items-center rounded-lg py-4'>
-        <motion.div className='h-24 w-24 px-2'>
-          <img src={imageUrl} alt="" />
-        </motion.div>
+      <motion.div initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: delay || 0 }} className="group relative">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full opacity-0 group-hover:opacity-70 blur-md transition-all duration-300"></div>
+        <div className="relative flex items-center justify-center h-24 w-24 rounded-full bg-white/5 backdrop-blur-md border border-white/10 group-hover:border-white/20 shadow-lg overflow-hidden transition-all duration-300">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent opacity-30"></div>
+          <motion.div className="relative h-16 w-16 px-2" whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+            <img src={imageUrl} alt="" className="w-full h-full object-contain drop-shadow-lg filter" />
+          </motion.div>
+        </div>
       </motion.div>
     </>
-  )
+  );
 }
-
-
-// const Ball = (props) => {
-//   const [decal] = useTexture([props.imgUrl]);
-//   return (
-//     <Float speed={2.5} rotationIntensity={1} floatIntensity={2}>
-//       <ambientLight intensity={0.25} />
-//       <directionalLight position={[0, 0, 0.05]} />
-//       <mesh castShadow receiveShadow scale={2.75}>
-//         <icosahedronGeometry args={[1, 2]} />
-//         <meshStandardMaterial color="#3d3d3d" polygonOffset polygonOffsetFactor={-5} flatShading />
-//         <Decal position={[0, 0, 1]} rotation={[2 * Math.PI, 0, 6.25]} flatShading map={decal} />
-//       </mesh>
-//     </Float>
-//   );
-// };
-
-// const BallCanvas = ({ icon }) => {
-//   return (
-//     <Canvas frameloop="always" gl={{ preserveDrawingBuffer: true }}>
-//       <Suspense fallback={<Loader />}>
-//         <OrbitControls enableZoom={false} position0={0} />
-//         <Ball imgUrl={icon} />
-//       </Suspense>
-
-//       <Preload all />
-//     </Canvas>
-//   );
-// };
-
-// export default BallCanvas;
